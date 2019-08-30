@@ -8,7 +8,7 @@
         android:onClick="clickLis"
         android:textAllCaps="false"
         android:id="@+id/cp_bt1"
-        android:text="系统 Uri"
+        android:text="常用 Uri"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"

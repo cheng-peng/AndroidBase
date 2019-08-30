@@ -23,7 +23,7 @@ public class ContentProviderActivity extends BaseActivity {
     public void clickLis(View view) {
         switch (view.getId()) {
             case R.id.cp_bt1:
-                //系统Uri
+                //常用 Uri
                 startActivity(SystemUriActivity.class);
                 break;
             case R.id.cp_bt2:

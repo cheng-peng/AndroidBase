@@ -27,11 +27,11 @@ public class SystemUriActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.su_bt1:
                 //获取通讯录
-                checkPermission(new CheckPermListener() {
-                    @Override
-                    public void superPermission() {
-                        startActivity(ReadContactsActivity.class);
-                    }
+                    checkPermission(new CheckPermListener() {
+                        @Override
+                        public void superPermission() {
+                            startActivity(ReadContactsActivity.class);
+                        }
                 }, 2, "用于获取通讯录数据功能", Manifest.permission.READ_CONTACTS);
                 break;
             case R.id.su_bt2:
@@ -58,6 +58,11 @@ public class SystemUriActivity extends BaseActivity {
                 }, 2, "用于打电话功能", Manifest.permission.CALL_PHONE);
                 break;
             case R.id.su_bt5:
+                String qq = "978515743";
+                String url = "mqqwpa://im/chat?chat_type=wpa&uin=" + qq;
+                Uri uri4=Uri.parse(url);
+                Intent intent4=new Intent(Intent.ACTION_VIEW,uri4);
+                startActivity(intent4);
                 break;
         }
     }
