@@ -4,6 +4,8 @@ import android.view.View;
 
 import com.cxp.androidbase.BaseActivity;
 import com.cxp.androidbase.R;
+import com.cxp.androidbase.content_provider.custom.CustomUriActivity;
+import com.cxp.androidbase.content_provider.system.SystemUriActivity;
 
 /**
  * 文 件 名: ContentProviderActivity
@@ -28,6 +30,7 @@ public class ContentProviderActivity extends BaseActivity {
                 break;
             case R.id.cp_bt2:
                 //自定义Uri
+                startActivity(CustomUriActivity.class);
                 break;
         }
     }

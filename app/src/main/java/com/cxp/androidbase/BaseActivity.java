@@ -1,5 +1,6 @@
 package com.cxp.androidbase;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -22,11 +23,16 @@ import java.util.List;
  */
 public abstract class BaseActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
+    protected Context context;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        context=this;
+
         initView();
+
     }
 
     protected abstract void initView();

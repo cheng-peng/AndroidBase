@@ -1,4 +1,4 @@
-package com.cxp.androidbase.content_provider;
+package com.cxp.androidbase.content_provider.system;
 
 import android.Manifest;
 import android.content.Intent;
