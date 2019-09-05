@@ -14,8 +14,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:theme="@style/SplashActivity_Theme"
-            android:name=".SplashActivity">
+            android:name=".SplashActivity"
+            android:theme="@style/SplashActivity_Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,34 +23,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:windowSoftInputMode="stateHidden|stateUnchanged"
+            android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:name=".MainActivity"/>
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity android:name=".broadcast_receiver.BroadcastReceiverActivity" />
         <activity android:name=".sqlite.SQLiteActivity" />
         <activity android:name=".content_provider.ContentProviderActivity" />
-        <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".content_provider.system.ReadContactsActivity" />
         <activity android:name=".content_provider.system.SystemUriActivity" />
         <activity android:name=".content_provider.custom.CustomUriActivity" />
         <activity
+            android:name=".scheme.IntentParseActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:windowSoftInputMode="stateVisible"
-            android:theme="@android:style/Theme.Dialog"
-            android:parentActivityName=".MainActivity"
-            android:name=".scheme.IntentParseActivity">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateVisible">
 
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:host="info"
                     android:scheme="cxp" />
-
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
-        <activity android:name=".scheme.SchemeActivity"/>
+        <activity android:name=".scheme.SchemeActivity" />
+
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".webview.BasicsActivity"/>
+        <activity android:name=".webview.DetailsActivity"/>
+        <activity android:name=".webview.WebViewJsActivity"/>
+
 
         <!--读取权限-->
         <!--android:readPermission="com.cxp.androidbase.provider.READ_PERMISSION"-->
@@ -81,17 +86,18 @@
         android:name="com.cxp.androidbase.provider.READ_PERMISSION"
         android:protectionLevel="normal" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <!--获取打电话权限-->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!--获取发短信权限-->
     <uses-permission android:name="android.permission.SEND_SMS" />
 
+    <!--网络权限-->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!--获取通讯录数据-->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
-    <uses-permission android:name="com.cxp.provider.READ_PERMISSION" />
 
 
 </manifest>

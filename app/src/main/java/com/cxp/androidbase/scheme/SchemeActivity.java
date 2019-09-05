@@ -16,9 +16,7 @@ import com.cxp.androidbase.R;
  */
 public class SchemeActivity extends BaseActivity {
 
-
     private TextView mTv;
-
 
     @Override
     protected void initView() {

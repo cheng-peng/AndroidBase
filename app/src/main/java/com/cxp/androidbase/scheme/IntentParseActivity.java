@@ -1,13 +1,13 @@
 package com.cxp.androidbase.scheme;
 
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
-import androidx.core.app.TaskStackBuilder;
-
 import com.cxp.androidbase.BaseActivity;
+import com.cxp.androidbase.MainActivity;
 
 import java.util.Set;
 
@@ -53,13 +53,13 @@ public class IntentParseActivity extends BaseActivity {
             Log.d(TAG, "============>name：" + name + "<============");
             Log.d(TAG, "============>id：" + id + "<============");
 
-
-            TaskStackBuilder tsb = TaskStackBuilder.create(mContext);
-            tsb.addParentStack(SchemeActivity.class);
-            Intent intent = new Intent(mContext, SchemeActivity.class);
-            intent.putExtra("name",name);
-            tsb.addNextIntent(intent);
-            tsb.startActivities();
+            Intent intent1 = new Intent(mContext, MainActivity.class);
+            Intent intent2 = new Intent(mContext, SchemeActivity.class);
+            intent2.putExtra("name", name);
+            TaskStackBuilder.create(mContext)
+                    .addNextIntent(intent1)
+                    .addNextIntent(intent2)
+                    .startActivities();
 
             finish();
         }
